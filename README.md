@@ -13,12 +13,6 @@ player's Goal:
 - get the madness vacinne(Gives you the ability to control player's madness to an extent)
 - leave the scene(something like dersert storm scene ending).
 
-Score System:
-- based on time
-- weapon accuracy
-- madness rage
-- etc
-
 To do's:
 
 * Character Movement
@@ -41,4 +35,11 @@ Animations Required:
 * walk, run, idle
 * rage and madness switch
 * basic combact
+
+Score System:
+- based on time
+- weapon accuracy
+- madness rage
+- etc
+
 
