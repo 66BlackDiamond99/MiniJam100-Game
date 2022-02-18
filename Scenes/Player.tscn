@@ -16,3 +16,17 @@ shape = SubResource( 1 )
 [node name="PlayerMesh" type="Spatial" parent="."]
 
 [node name="CameraPlaceHolder" type="Spatial" parent="."]
+
+[node name="PauseScreen" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD_Widget" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
