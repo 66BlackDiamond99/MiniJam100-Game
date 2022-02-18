@@ -1,21 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 
+[sub_resource type="CapsuleMesh" id=2]
+
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.5
-height = 1.7
 
 [node name="Player" type="KinematicBody"]
+collision_layer = 2
 script = ExtResource( 1 )
+
+[node name="PlayerMesh" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="PlayerMesh"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="PlayerMesh" type="Spatial" parent="."]
+[node name="CameraPivot" type="Spatial" parent="."]
 
-[node name="CameraPlaceHolder" type="Spatial" parent="."]
+[node name="CameraHolder" type="SpringArm" parent="CameraPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+spring_length = 5.0
+
+[node name="Camera" type="Camera" parent="CameraPivot/CameraHolder"]
 
 [node name="PauseScreen" type="Control" parent="."]
 margin_right = 40.0
