@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Resources/Materials/Prototyping/Red.tres" type="Material" id=1]
+[ext_resource path="res://Resources/Materials/Prototyping/Ligth.tres" type="Material" id=1]
+[ext_resource path="res://Resources/worldEnvironmet.tres" type="Environment" id=2]
+[ext_resource path="res://Resources/Materials/Prototyping/Purple.tres" type="Material" id=3]
 
 [node name="main" type="Spatial"]
 
-[node name="CSGCombiner" type="CSGCombiner" parent="."]
+[node name="SkyBox" type="Spatial" parent="."]
 
-[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SkyBox"]
+environment = ExtResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="SkyBox"]
+transform = Transform( 0.886809, 0.3263, -0.327258, 0, 0.708143, 0.706069, 0.462136, -0.626149, 0.627988, 0, 0, 0 )
+shadow_enabled = true
+shadow_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88566, 0 )
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+width = 13.0516
+height = 0.333175
+depth = 13.4968
 material = ExtResource( 1 )
