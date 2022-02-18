@@ -1,9 +1,7 @@
 extends KinematicBody
 
-export var speed:float = 15
-export var acceleration:float = 7.5
-export var gravity:float = 0.98
-export var max_terminal_vel:float = 54
+export var speed:float = 20
+export var acceleration:float = 0.6
 
 var space_state:PhysicsDirectSpaceState
 var path_index
