@@ -3,5 +3,6 @@
 [ext_resource path="res://Assets/textures/Prototyping/Light.png" type="Texture" id=1]
 
 [resource]
+albedo_color = Color( 0.270588, 0.556863, 0.988235, 1 )
 albedo_texture = ExtResource( 1 )
 uv1_triplanar = true
