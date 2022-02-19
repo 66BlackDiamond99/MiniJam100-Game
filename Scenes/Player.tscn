@@ -60,10 +60,10 @@ playback_default_blend_time = 0.2
 [node name="Weapons" type="Spatial" parent="."]
 visible = false
 
-[node name="PistonPlaceHolder" parent="Weapons" instance=ExtResource( 4 )]
+[node name="PistonPH" parent="Weapons" instance=ExtResource( 4 )]
 
-[node name="RIflePlaceHolder" parent="Weapons" instance=ExtResource( 3 )]
+[node name="RIflePH" parent="Weapons" instance=ExtResource( 3 )]
 
-[node name="PumpShotGun" parent="Weapons" instance=ExtResource( 5 )]
+[node name="PumpShotGunPH" parent="Weapons" instance=ExtResource( 5 )]
 
 [editable path="Female"]
