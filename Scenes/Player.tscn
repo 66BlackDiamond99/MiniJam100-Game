@@ -35,6 +35,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 spring_length = 3.0
 
 [node name="Camera" type="Camera" parent="CameraPivot/CameraHolder"]
+far = 2000.0
 
 [node name="PauseScreen" type="Control" parent="."]
 margin_right = 40.0

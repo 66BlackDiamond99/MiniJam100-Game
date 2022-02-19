@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Modular Buildings/Imported/Wall_A.fbx" type="PackedScene" id=1]
+
+[node name="Wall_A" instance=ExtResource( 1 )]
