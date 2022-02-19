@@ -3,11 +3,15 @@
 [ext_resource path="res://Scripts/Zombie.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleMesh" id=1]
+radius = 0.26
+mid_height = 1.24
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.2, 1, 0, 1 )
 
 [sub_resource type="CapsuleShape" id=2]
+radius = 0.255093
+height = 1.24076
 
 [node name="Zombie" type="KinematicBody"]
 script = ExtResource( 1 )
