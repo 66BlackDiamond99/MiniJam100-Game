@@ -5,7 +5,7 @@
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.247059, 0.501961, 0.0117647, 1 )
+albedo_color = Color( 0.2, 1, 0, 1 )
 
 [sub_resource type="CapsuleShape" id=2]
 

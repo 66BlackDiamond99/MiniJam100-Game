@@ -20,7 +20,7 @@ func _ready():
 	else:
 		print("cant find navigation")
 
-func _process(delta):
+func _process(_delta):
 	var player:KinematicBody = get_parent().get_parent().get_node("Player");
 	if player:
 		target = player.global_transform.origin
