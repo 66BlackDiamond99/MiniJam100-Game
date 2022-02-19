@@ -48,9 +48,10 @@ __meta__ = {
 }
 
 [node name="Female" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.0203817, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="Female" index="1"]
-autoplay = "running-loop"
+autoplay = "idle-loop"
+playback_default_blend_time = 0.2
 
 [editable path="Female"]

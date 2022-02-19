@@ -57,7 +57,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8915, 1.80924, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57718, 11.3291 )
-speed = 10.0
-acceleration = 7.5
+walk_speed = 2.0
+run_speed = 8.0
+acceleration = 3.0
+air_acceleration = 1.0
 min_pitch = -50.0
 max_pitch = 50.0

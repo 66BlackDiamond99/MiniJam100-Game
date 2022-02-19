@@ -1,7 +1,8 @@
 extends KinematicBody
 
-export var speed:float = 20
-export var acceleration:float = 15
+export var walk_speed:float = 10
+export var run_speed:float = walk_speed + 10
+export var acceleration:float = 7.5
 export var air_acceleration:float = 5
 export var gravity:float = 0.98
 export var max_terminal_vel:float = 54
@@ -16,6 +17,8 @@ var y_velocity:float
 
 onready var camera_pivot = $CameraPivot
 onready var camera = $CameraPivot/CameraHolder/Camera
+onready var animator = $Female/AnimationPlayer
+onready var model = $Female
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -36,21 +39,33 @@ func _physics_process(delta):
 
 func handle_movement(delta):
 	var direction:Vector3 = Vector3.ZERO
+	var running = false
+	
 	if Input.is_action_pressed("move_forward"):
+		model.rotation_degrees.y = lerp(model.rotation_degrees.y,-180,0.4)
 		direction -= transform.basis.z
 	
 	if Input.is_action_pressed("move_backward"):
+		model.rotation_degrees.y = lerp(model.rotation_degrees.y,0,0.4)
 		direction += transform.basis.z
 	
 	if Input.is_action_pressed("move_right"):
+		model.rotation_degrees.y = lerp(model.rotation_degrees.y,270,0.4)
 		direction += transform.basis.x
 	
 	if Input.is_action_pressed("move_left"):
+		model.rotation_degrees.y = lerp(model.rotation_degrees.y,-90,0.4)
 		direction -= transform.basis.x
+	
 	
 	direction = direction.normalized()
 	
+	
+	if direction.length() != 0 and is_on_floor() and Input.is_action_pressed("run"):
+		running = true
+	
 	var acc = acceleration if is_on_floor() else air_acceleration
+	var speed = run_speed if running else walk_speed
 	velocity = velocity.linear_interpolate(direction * speed, acc * delta)
 	
 	if is_on_floor():
@@ -63,4 +78,14 @@ func handle_movement(delta):
 	
 	velocity.y = y_velocity
 	velocity = move_and_slide(velocity,Vector3.UP)
+	
+	if velocity.length() < 0.01 and is_on_floor():
+		animator.play("idle-loop")
+	elif is_on_floor():
+		if velocity.length() > walk_speed and running:
+			animator.play("running-loop")
+		else:
+			animator.play("Walking-loop")
+	else:
+		pass #jump/fall animation
 	
